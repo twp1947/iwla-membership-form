@@ -93,46 +93,249 @@
                 <label for="sponsor">Sponsor</label>
                 <input type="text" id="sponsor" name="sponsor">
             </div>
+            
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form</title>
+    <style>
+        #dob-field {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleDOBField() {
+            const membershipType = document.getElementById("membership-type").value;
+            const dobField = document.getElementById("dob-field");
+            if (membershipType === "Student") {
+                dobField.style.display = "block";
+            } else {
+                dobField.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form</title>
+</head>
+<body>
+    <h1>Membership Application</h1>
+    <form action="mailto:example@example.com" method="post" enctype="text/plain">
+        <p>
+            MEMBERSHIPS: I enclose $_________ as dues in the IWLA<br>
+            <label for="membership-type">Select Membership Type:</label>
+            <select id="membership-type" name="membership_type">
+                <option value="regular-full-year">$110.00 Regular (Local Family)</option>
+                <option value="regular-half-year">$55.00 Regular (Local Family - Half Year) (New Members - June, July & August only</option>
+                <option value="family-full-year">$135.00 Family (National)</option>
+                <option value="family-half-year">$70.00 Family (National - Half Year)</option>
+                <option value="student-full-year">$55.00 Student (Up to age 21)</option>
+.                 
+                <option value="student-half-year">$30.00 Student (Half Year)</option>
+            </select>
+        </p>
+        <p>
+            
+        </p>
+        <p>
+            Return Application to: Izaak Walton League PO Box 327 Marshalltown IA 50158
+        </p>
+        <hr>
+       
+</body>
+</html>
+   
+
             <div class="form-group">
-                <label>Membership Type</label>
-                <label><input type="radio" name="membership" value="Regular (Local Family)" required> Regular (Local Family) - $110.00</label><br>
-                <label><input type="radio" name="membership" value="Family (National)"> Family (National) - $135.00</label><br>
-                <label><input type="radio" name="membership" value="Student"> Student - $55.00 (up to age 21)  Date of Birth ___________ </label>
+              <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IWLA Membership Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+        </div>
+
+        <!-- Volunteer Opportunities -->
+        <div class="form-section">
+            <label>Volunteer Opportunities: (Check any that apply)</label>
+            <div><input type="checkbox" id="gunRange" name="volunteer[]" value="Gun Range Upkeep and Maintenance"> Gun Range Upkeep and Maintenance</div>
+            <div><input type="checkbox" id="hunterSafety" name="volunteer[]" value="Hunter Safety Program"> Hunter Safety Program</div>
+            <div><input type="checkbox" id="cleanupDays" name="volunteer[]" value="Spring and Fall Clean-up Days"> Spring and Fall Clean-up Days</div>
+            <div><input type="checkbox" id="boardOfDirectors" name="volunteer[]" value="Serve on Board of Directors"> Serve on Board of Directors</div>
+            <div><input type="checkbox" id="treeSales" name="volunteer[]" value="Christmas Tree Sales"> Christmas Tree Sales (Nov & Dec)</div>
+            <div><input type="checkbox" id="treePlanting" name="volunteer[]" value="Christmas Tree Planting"> Christmas Tree Planting, Watering & Shearing</div>
+            <div><input type="checkbox" id="kidsFishing" name="volunteer[]" value="Kids Fishing Derby"> Kids Fishing Derby</div>
+            <div><input type="checkbox" id="archeryRange" name="volunteer[]" value="Archery Range Maintenance"> Archery Range Maintenance</div>
+            <div><input type="checkbox" id="sportingClayShoots" name="volunteer[]" value="Sporting Clay Shoots"> Help with Sporting Clay Shoots</div>
+            <div><input type="checkbox" id="uncleIkes" name="volunteer[]" value="Uncle Ikes Youth Program"> Uncle Ikes Youth Program</div>
+            <div><input type="checkbox" id="callIfNeeded" name="volunteer[]" value="Please Call if Help is Needed"> Please Call if Help is Needed</div>
+        </div>
+
+        <!-- How did you hear about us? -->
+        <div class="form-section">
+            <label>How did you hear about us?</label>
+            <div><input type="radio" id="friend" name="referral" value="Friend" required> Friend</div>
+            <div><input type="radio" id="ikeMember" name="referral" value="Ike Member"> Ike Member</div>
+            <div><input type="radio" id="newspaper" name="referral" value="Newspaper Ad"> Newspaper Ad</div>
+            <div><input type="radio" id="website" name="referral" value="Web Site"> Web Site</div>
+            <div>
+                <input type="radio" id="other" name="referral" value="Other"> Other
+                <input type="text" id="otherReason" name="otherReason" placeholder="Please specify" style="display: none;">
             </div>
-            <div class="form-group">
-                <label for="amount">Amount Enclosed ($)</label>
-                <input type="number" id="amount" name="amount" min="0.01" step="0.01" required>
+        </div>
+
+        <!-- Submission -->
+        <div class="form-section">
+            <button type="button" onclick="printForm()">Print Form</button>
+        </div>
+    </form>
+
+    <script>
+        // Show/hide the "Other" reason input field based on selection
+        document.getElementById('other').addEventListener('change', function () {
+            document.getElementById('otherReason').style.display = 'inline-block';
+        });
+
+        const referralOptions = document.querySelectorAll('input[name="referral"]');
+        referralOptions.forEach(option => {
+            option.addEventListener('change', function () {
+                if (this.id !== 'other') {
+                    document.getElementById('otherReason').style.display = 'none';
+                }
+            });
+        });
+
+        // Print the form
+        function printForm() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
             </div>
-            <div class="form-group">
-                
-               
-            </div>
-            <div class="form-group">
-                <label>Volunteer Interests</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="volunteer" value="Gun Range Upkeep and Maintenance"> Gun Range Upkeep and Maintenance</label><br>
-                    <label><input type="checkbox" name="volunteer" value="Hunter Safety Program"> Hunter Safety Program</label><br>
-                    <label><input type="checkbox" name="volunteer" value="Spring and Fall Clean-up Days"> Spring and Fall Clean-up Days</label><br>
-                    <label><input type="checkbox" name="volunteer" value="Serve on Board of Directors"> Serve on Board of Directors</label><br>
-                    <label><input type="checkbox" name="volunteer" value="Christmas Tree Sales"> Christmas Tree Sales</label><br>
-                    <label><input type="checkbox" name="volunteer" value="Kids Fishing Derby"> Kids Fishing Derby</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>How did you hear about us?</label>
-                <label><input type="radio" name="referral" value="Friend"> Friend</label>
-                <label><input type="radio" name="referral" value="Ike Member"> Ike Member</label>
-                <label><input type="radio" name="referral" value="Newspaper Ad"> Newspaper Ad</label>
-                <label><input type="radio" name="referral" value="Web Site"> Web Site</label>
+  <div class="form-section">
+         
+</body>
+</html>
+   
+       
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Example</title>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            const formData = new FormData(event.target);
+            const formObject = {};
+
+            // Convert form data to an object
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            // Print the form data to the console
+            console.log("Form Data:", formObject);
+
+            // Optionally, display the form data on the page
+            const output = document.getElementById('output');
+            output.textContent = JSON.stringify(formObject, null, 2);
+        }
+    </script>
+ <center>  
+ <h2> Thank You, Your Izaak Walton League Board of Directors </h2>
+<body>
+ 
+           
             </div> 
-            <label> Return  the form to Izaak Walton League, P.O.Box 327, Marshalltown, Ia 50158 </label>
-            <button type="button" onclick="window.print()">Print Form</button>
-        </form>
-    </div>
-</body>
-</html>
-  </script>
-</body>
-</html>
-
-
+            <form>
