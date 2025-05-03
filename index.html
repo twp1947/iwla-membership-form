@@ -1,156 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IWLA Membership Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e6f2e9;
-      color: #1a3d2f;
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      color: #2e5c44;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-    }
-    .checkbox-group label {
-      display: block;
-      margin-top: 5px;
-      font-weight: normal;
-    }
-    .button-group {
-      margin-top: 20px;
-      display: flex;
-      gap: 10px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #2e5c44;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #3d7a5e;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .checkbox-group label {
+            display: inline;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media print {
+            button {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Izaak Walton League Membership Application</h1>
-
-  <form id="membershipForm" action="https://formspree.io/f/mnndjrkn" method="POST">
-    <label for="name">Full Name</label>
-    <input type="text" name="name" required>
-
-    <label for="email">Email Address</label>
-    <input type="email" name="_replyto" required>
-
-    <label for="address">Address</label>
-    <input type="text" name="address" required>
-
-    <label for="city">City</label>
-    <input type="text" name="city" required>
-
-    <label for="state">State</label>
-    <input type="text" name="state" required>
-
-    <label for="zip">Zip Code</label>
-    <input type="text" name="zip" required>
-
-    <label for="phone">Phone Number</label>
-    <input type="tel" name="phone" required>
-
-    <label for="dob">Date of Birth (only for Student Membership)</label>
-    <input type="text" name="dob" placeholder="MM/DD/YYYY">
-
-    <label for="membership_type">Select Membership </label>
-    <select name="membership_type" id="membershipType" onchange="updateDues()" required>
-      <option value="">-- Select Membership Type --</option>
-      <option value="Regular - Full Year">$110.00 - Regular (Local Family) - Full Year</option>
-      <option value="Regular - Half Year">$55.00 - Regular (Local Family) - Half Year</option>
-      <option value="Family - Full Year">$135.00 - Family (National) - Full Year</option>
-      <option value="Family - Half Year">$70.00 - Family (National) - Half Year</option>
-      <option value="Student - Full Year">$55.00 - Student - Full Year</option>
-      <option value="Student - Half Year">$30.00 - Student - Half Year</option>
-    </select>
-
-    <label for="dues">Amount Enclosed for Dues</label>
-    <input type="text" name="dues" id="duesAmount" readonly required>
-
-    
-
-    <label>We Need Volunteers to make this a successful organization </label>
-     <label>Please check any of the following that you would like to help with :</label> 
-    <div class="checkbox-group"> <br>
-      <label><input type="checkbox" name="volunteer[]" value="Gun Range Upkeep and Maintenance"> Gun Range Upkeep and Maintenance</label>
-      <label><input type="checkbox" name="volunteer[]" value="Hunter Safety Program"> Hunter Safety Program</label>
-      <label><input type="checkbox" name="volunteer[]" value="Spring and Fall Clean-up Days"> Spring and Fall Clean-up Days</label>
-      <label><input type="checkbox" name="volunteer[]" value="Serve on Board of Directors"> Serve on Board of Directors</label>
-      <label><input type="checkbox" name="volunteer[]" value="Christmas Tree Sales"> Christmas Tree Sales (Nov & Dec)</label>
-      <label><input type="checkbox" name="volunteer[]" value="Christmas Tree Planting"> Christmas Tree Planting, Watering & Shearing</label>
-      <label><input type="checkbox" name="volunteer[]" value="Kids Fishing Derby"> Kids Fishing Derby</label>
-      <label><input type="checkbox" name="volunteer[]" value="Archery Range Maintenance"> Archery Range Maintenance</label>
-      <label><input type="checkbox" name="volunteer[]" value="Sporting Clay Shoots"> Help with Sporting Clay Shoots</label>
-      <label><input type="checkbox" name="volunteer[]" value="Uncle Ikes Youth Program"> Uncle Ikes Youth Program</label>
-    
+    <div class="form-container">
+        <h2>Membership Application</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address or PO Box</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="zip">ZIP</label>
+                <input type="text" id="zip" name="zip" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="sponsor">Sponsor</label>
+                <input type="text" id="sponsor" name="sponsor">
+            </div>
+            <div class="form-group">
+                <label>Membership Type</label>
+                <label><input type="radio" name="membership" value="Regular (Local Family)" required> Regular (Local Family) - $110.00</label><br>
+                <label><input type="radio" name="membership" value="Family (National)"> Family (National) - $135.00</label><br>
+                <label><input type="radio" name="membership" value="Student"> Student - $55.00 (up to age 21)  Date of Birth ___________ </label>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount Enclosed ($)</label>
+                <input type="number" id="amount" name="amount" min="0.01" step="0.01" required>
+            </div>
+            <div class="form-group">
+                
+               
+            </div>
+            <div class="form-group">
+                <label>Volunteer Interests</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="volunteer" value="Gun Range Upkeep and Maintenance"> Gun Range Upkeep and Maintenance</label><br>
+                    <label><input type="checkbox" name="volunteer" value="Hunter Safety Program"> Hunter Safety Program</label><br>
+                    <label><input type="checkbox" name="volunteer" value="Spring and Fall Clean-up Days"> Spring and Fall Clean-up Days</label><br>
+                    <label><input type="checkbox" name="volunteer" value="Serve on Board of Directors"> Serve on Board of Directors</label><br>
+                    <label><input type="checkbox" name="volunteer" value="Christmas Tree Sales"> Christmas Tree Sales</label><br>
+                    <label><input type="checkbox" name="volunteer" value="Kids Fishing Derby"> Kids Fishing Derby</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>How did you hear about us?</label>
+                <label><input type="radio" name="referral" value="Friend"> Friend</label>
+                <label><input type="radio" name="referral" value="Ike Member"> Ike Member</label>
+                <label><input type="radio" name="referral" value="Newspaper Ad"> Newspaper Ad</label>
+                <label><input type="radio" name="referral" value="Web Site"> Web Site</label>
+            </div> 
+            <label> Return  the form to Izaak Walton League, P.O.Box 327, Marshalltown, Ia 50158 </label>
+            <button type="button" onclick="window.print()">Print Form</button>
+        </form>
     </div>
-
-    <label for="referral">How did you hear about the Marshall County Izaak Walton League?</label>
-    <select name="referral" required>
-      <option value="">-- Select One --</option>
-      <option value="Friend">Friend</option>
-      <option value="Ikes Member">Ikes Member</option>
-      <option value="Newspaper Ad">Newspaper Ad</option>
-      <option value="Website">Website</option>
-    </select>
-    <label> Print out the form and  <label>
-    <label> Send the membership form with your dues to </label>
-    <label> Izaak Walton League,  P.O.Box 327, Marshalltown, Ia 50158 </label>    
-    
-    <label for="submitAction">Submit Options</label>
-    <select id="submitAction" onchange="handleSubmitOption(this.value)">
-      
-      <option value="print">Print Form</option>
-    </select>
-
-    <div class="button-group">
-      <button type="submit">Submit</button>
-    </div>
-  </form>
-
-  <script>
-    function updateDues() {
-      const dropdown = document.getElementById("membershipType");
-      const duesInput = document.getElementById("duesAmount");
-      const selected = dropdown.options[dropdown.selectedIndex].text;
-      const amount = selected.split(" - ")[0];
-      duesInput.value = amount;
-    }
-
-    function handleSubmitOption(value) {
-      const form = document.getElementById("membershipForm");
-      if (value === "print") {
-        form.onsubmit = function (e) {
-          e.preventDefault();
-   window.print();
-        };
-      } else {
-        form.onsubmit = null;
-      }
-    }
+</body>
+</html>
   </script>
 </body>
 </html>
