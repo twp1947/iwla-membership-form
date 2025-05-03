@@ -191,20 +191,19 @@
     <title>Membership Form</title>
 </head>
 <body>
-    <h1>Membership Application</h1>
-    <form action="mailto:example@example.com" method="post" enctype="text/plain">
-        <p>
-            MEMBERSHIPS: I enclose $_________ as dues in the IWLA<br>
-            <label for="membership-type">Select Membership Type:</label>
-            <select id="membership-type" name="membership_type">
-                <option value="regular-full-year">$110.00 Regular (Local Family)</option>
-                <option value="regular-half-year">$55.00 Regular (Local Family - Half Year) (New Members - June, July & August only</option>
-                <option value="family-full-year">$135.00 Family (National)</option>
-                <option value="family-half-year">$70.00 Family (National - Half Year)</option>
-                <option value="student-full-year">$55.00 Student (Up to age 21)</option>
-.                 
-                <option value="student-half-year">$30.00 Student (Half Year)</option>
-            </select>
+<p>
+    MEMBERSHIPS: I enclose $<input type="number" id="membership-amount" name="membership_amount" step="0.01" placeholder="Enter amount"> as dues in the IWLA<br>
+    <label for="membership-type">Select Membership Application:</label>
+    <select id="membership-type" name="membership_type">
+        <option value="regular-full-year">$110.00 Regular (Local Family)</option>
+        <option value="regular-half-year">$55.00 Regular (Local Family - Half Year) (New Members - June, July & August only</option>
+        <option value="family-full-year">$135.00 Family (National)</option>
+        <option value="family-half-year">$70.00 Family (National - Half Year)</option>
+        <option value="student-full-year">$55.00 Student (Up to age 21)</option>
+        <option value="student-half-year">$30.00 Student (Half Year)</option>
+    </select>
+</p>
+    
         </p>
         <p>
             
